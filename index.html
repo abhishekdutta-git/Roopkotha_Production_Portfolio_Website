@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Roopkotha Production — A premier film and music production house founded by Abhishek Kumar Dutta. Crafting cinematic stories and soulful soundscapes.">
+    <title>Roopkotha Production — Film & Music Production House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-logo">
+                <img src="logo-rk.png" alt="Roopkotha Production" class="loader-logo-img">
+                <span class="loader-en">ROOPKOTHA PRODUCTION</span>
+            </div>
+            <div class="loader-bar"></div>
+            <span class="loader-text">Crafting Stories...</span>
+        </div>
+    </div>
+
+    <!-- Cinematic Grain Overlay -->
+    <div class="film-grain"></div>
+
+    <!-- Floating Particles Canvas -->
+    <canvas id="particlesCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#hero" class="nav-logo">
+            <img src="logo-rk.png" alt="Roopkotha" class="nav-logo-img">
+            <span class="logo-text">ROOPKOTHA<span class="logo-dot">.</span></span>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+            <li><a href="#portfolio" class="nav-link" data-section="portfolio">Portfolio</a></li>
+            <li><a href="#founder" class="nav-link" data-section="founder">Founder</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Keep in Touch</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-links">
+            <li><a href="#hero" class="mobile-link" data-section="hero">Home</a></li>
+            <li><a href="#about" class="mobile-link" data-section="about">About</a></li>
+            <li><a href="#services" class="mobile-link" data-section="services">Services</a></li>
+            <li><a href="#portfolio" class="mobile-link" data-section="portfolio">Portfolio</a></li>
+            <li><a href="#founder" class="mobile-link" data-section="founder">Founder</a></li>
+            <li><a href="#contact" class="mobile-link" data-section="contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-layers">
+            <div class="hero-gradient-1"></div>
+            <div class="hero-gradient-2"></div>
+            <div class="hero-vignette"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="12" r="4" fill="currentColor" />
+                    <path
+                        d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"
+                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                Film & Music Production House
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                <span class="title-line">Welcome to</span>
+                <span class="title-name">
+                    <span class="title-main">Roopkotha</span>
+                    <span class="title-sub">Production</span>
+                </span>
+            </h1>
+            <p class="hero-tagline animate-on-scroll">
+                <span class="tagline-typed" id="typedText"></span><span class="tagline-cursor">|</span>
+            </p>
+            <p class="hero-description animate-on-scroll">
+                Where every frame tells a <strong>story</strong> and every note carries an <strong>emotion</strong>.
+                We bring cinematic visions and musical masterpieces to life with uncompromising passion and artistry.
+            </p>
+            <div class="hero-actions animate-on-scroll">
+                <a href="#portfolio" class="btn btn-primary" id="viewWorkBtn">
+                    <span>Explore Our Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-outline" id="contactBtn">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+
+        </div>
+        <div class="hero-visual animate-on-scroll">
+            <div class="hero-reel">
+                <div class="reel-glow"></div>
+                <!-- Film Reel SVG -->
+                <div class="reel-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="90" stroke="url(#reelGrad)" stroke-width="3" opacity="0.3" />
+                        <circle cx="100" cy="100" r="70" stroke="url(#reelGrad)" stroke-width="2" opacity="0.2" />
+                        <circle cx="100" cy="100" r="30" fill="url(#reelGrad)" opacity="0.15" />
+                        <circle cx="100" cy="100" r="12" fill="url(#reelGrad)" opacity="0.4" />
+                        <!-- Sprocket holes -->
+                        <circle cx="100" cy="20" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="100" cy="180" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="20" cy="100" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="180" cy="100" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="43" cy="43" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="157" cy="43" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="43" cy="157" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <circle cx="157" cy="157" r="8" fill="url(#reelGrad)" opacity="0.25" />
+                        <defs>
+                            <linearGradient id="reelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#d4a574" />
+                                <stop offset="50%" style="stop-color:#c9944e" />
+                                <stop offset="100%" style="stop-color:#b8860b" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="card-icon">🎬</div>
+                    <span>Film Production</span>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🎵</div>
+                    <span>Music Production</span>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">✨</div>
+                    <span>Post Production</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">01 — Our Story</span>
+                <h2 class="section-title">Where Stories Come <br><span class="gradient-text">Alive</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image animate-on-scroll">
+                    <div class="about-img-wrapper">
+                        <div class="about-img-placeholder">
+                            <div class="clapperboard">
+                                <div class="clapper-top">
+                                    <div class="clapper-stripes">
+                                        <div class="stripe"></div>
+                                        <div class="stripe"></div>
+                                        <div class="stripe"></div>
+                                        <div class="stripe"></div>
+                                        <div class="stripe"></div>
+                                    </div>
+                                </div>
+                                <div class="clapper-body">
+                                    <div class="clapper-row">
+                                        <span class="clapper-label">PROD.</span>
+                                        <span class="clapper-value">ROOPKOTHA</span>
+                                    </div>
+                                    <div class="clapper-row">
+                                        <span class="clapper-label">DIRECTOR</span>
+                                        <span class="clapper-value">A.K. DUTTA</span>
+                                    </div>
+                                    <div class="clapper-row">
+                                        <span class="clapper-label">SCENE</span>
+                                        <span class="clapper-value">TAKE 1</span>
+                                    </div>
+                                    <div class="clapper-row">
+                                        <span class="clapper-label">DATE</span>
+                                        <span class="clapper-value">2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="experience-badge">
+                        <span class="exp-icon">🎬</span>
+                        <span class="exp-text">Crafting<br>Stories</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <p class="about-text animate-on-scroll">
+                        <strong>Roopkotha Production</strong> is a creative film and music production house
+                        dedicated to bringing extraordinary stories to life. Born from a deep love for cinema
+                        and music, we specialize in creating content that resonates with the soul and leaves
+                        a lasting impression.
+                    </p>
+                    <p class="about-text animate-on-scroll">
+                        Our name <em>"Roopkotha"</em> (রূপকথা) — meaning <strong>"fairy tale"</strong> in Bengali —
+                        reflects our philosophy: every project we undertake is a chance to create something magical,
+                        something that transcends the ordinary and transports audiences into worlds of wonder,
+                        emotion, and unforgettable experiences.
+                    </p>
+                    <div class="about-highlights animate-on-scroll">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polygon points="23 7 16 12 23 17 23 7" />
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Cinematic Storytelling</h4>
+                                <p>Compelling narratives brought to life with visual brilliance</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M9 18V5l12-2v13" />
+                                    <circle cx="6" cy="18" r="3" />
+                                    <circle cx="18" cy="16" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Musical Excellence</h4>
+                                <p>Soulful compositions and professional music production</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>End-to-End Production</h4>
+                                <p>From concept to final cut — we handle every detail</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">02 — What We Do</span>
+                <h2 class="section-title">Our Creative <br><span class="gradient-text">Services</span></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll" data-tilt>
+                    <div class="service-card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <polygon points="38 7 28 12 38 17 38 7" stroke="currentColor" stroke-width="2.5"
+                                fill="none" />
+                            <rect x="6" y="10" width="22" height="18" rx="3" stroke="currentColor" stroke-width="2.5" />
+                            <path d="M6 34h36" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M14 38h20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Film Production</h3>
+                    <p class="service-desc">Full-scale film production from scriptwriting and pre-production to shooting
+                        and final delivery. Short films, feature films, and documentaries.</p>
+                    <div class="service-tags">
+                        <span>Short Films</span>
+                        <span>Features</span>
+                        <span>Documentaries</span>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll" data-tilt>
+                    <div class="service-card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <path d="M14 34V10l24-4v24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <circle cx="10" cy="34" r="6" stroke="currentColor" stroke-width="2.5" />
+                            <circle cx="34" cy="30" r="6" stroke="currentColor" stroke-width="2.5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Music Production</h3>
+                    <p class="service-desc">Professional music production, composition, arrangement, and recording. From
+                        original scores to independent music releases and albums.</p>
+                    <div class="service-tags">
+                        <span>Composition</span>
+                        <span>Recording</span>
+                        <span>Albums</span>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll" data-tilt>
+                    <div class="service-card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="8" y="6" width="32" height="24" rx="3" stroke="currentColor" stroke-width="2.5" />
+                            <path d="M20 18l8-5v10l-8-5z" fill="currentColor" opacity="0.5" />
+                            <path d="M8 36h32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <path d="M12 42h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
+                            <circle cx="37" cy="9" r="2" fill="currentColor" opacity="0.5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Music Videos</h3>
+                    <p class="service-desc">Visually stunning music videos that complement and elevate the musical
+                        experience. Creative direction, cinematography, and storytelling through visuals.</p>
+                    <div class="service-tags">
+                        <span>Creative Direction</span>
+                        <span>Cinematography</span>
+                        <span>VFX</span>
+                    </div>
+                </div>
+
+                <div class="service-card animate-on-scroll" data-tilt>
+                    <div class="service-card-glow"></div>
+                    <div class="service-icon">
+                        <svg viewBox="0 0 48 48" fill="none">
+                            <rect x="6" y="8" width="36" height="22" rx="3" stroke="currentColor" stroke-width="2.5" />
+                            <path d="M14 34l-4 8h28l-4-8" stroke="currentColor" stroke-width="2.5"
+                                stroke-linejoin="round" />
+                            <path d="M16 16h6M16 20h10M16 24h4" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" />
+                            <circle cx="34" cy="18" r="4" stroke="currentColor" stroke-width="2.5" />
+                        </svg>
+                    </div>
+                    <h3 class="service-name">Post Production</h3>
+                    <p class="service-desc">Expert editing, color grading, sound design, mixing, mastering, and visual
+                        effects to polish every project to perfection.</p>
+                    <div class="service-tags">
+                        <span>Editing</span>
+                        <span>Color Grading</span>
+                        <span>Sound Design</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">03 — Our Work</span>
+                <h2 class="section-title">Featured <br><span class="gradient-text">Productions</span></h2>
+            </div>
+            <div class="project-filters animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="film">Film</button>
+                <button class="filter-btn" data-filter="music">Music</button>
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll" data-category="film">
+                        <div class="project-image">
+                            <img src="poster_thumbnail.png" alt="Aayna — The Reflected Self" class="project-thumb-img"
+                                style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="project-overlay">
+                                <a href="https://youtu.be/OXIHzwbjoQ8?si=HbqrqeIcyWuVQ7tm" target="_blank"
+                                    class="project-link" aria-label="Watch Now">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
+                                </a>
+                                <a href="https://youtu.be/OXIHzwbjoQ8?si=HbqrqeIcyWuVQ7tm" target="_blank"
+                                    class="project-link" aria-label="View Details">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category-tag">Short Film</span>
+                            <h3 class="project-title">Aayna — The Reflected Self</h3>
+                            <p class="project-desc">In the suffocating silence of a midnight hostel room, a student
+                                pushed to the edge faces a visceral psychological confrontation with the only person who
+                                can stop him: his own reflection. A haunting, intimate meditation on mental health and
+                                the life-altering power of looking oneself in the eye.</p>
+                            <div class="project-tags">
+                                <span class="tag">Psychological</span>
+                                <span class="tag">Drama</span>
+                                <span class="tag">Cinematic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll" data-category="music">
+                        <div class="project-image">
+                            <div class="project-placeholder coming-soon-placeholder">
+                                <div class="coming-soon-content">
+                                    <div class="pulse-ring"></div>
+                                    <span class="coming-soon-text">Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <span class="project-category-tag">Music Project</span>
+                            <h3 class="project-title">Upcoming Musical Journey</h3>
+                            <p class="project-desc">A new musical experience is currently in the works. Stay tuned for
+                                an extraordinary blend of rhythm and soul.</p>
+                            <div class="project-tags">
+                                <span class="tag">In Progress</span>
+                                <span class="tag">New Release</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="section founder" id="founder">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">04 — The Visionary</span>
+                <h2 class="section-title">Meet The <br><span class="gradient-text">Founder</span></h2>
+            </div>
+            <div class="founder-grid">
+                <div class="founder-image animate-on-scroll">
+                    <div class="founder-img-wrapper">
+                        <img src="founder.jpg" alt="Abhishek Kumar Dutta — Founder of Roopkotha Production"
+                            class="founder-photo">
+                    </div>
+                    <div class="founder-name-badge">
+                        <span class="founder-badge-icon">🎬</span>
+                        <span class="founder-badge-text">Director • Music Producer • Composer</span>
+                    </div>
+                </div>
+                <div class="founder-content">
+                    <h3 class="founder-name animate-on-scroll">Abhishek Kumar Dutta</h3>
+                    <p class="founder-role animate-on-scroll">Founder & Creative Director — Roopkotha Production</p>
+                    <p class="founder-bio animate-on-scroll">
+                        Abhishek Kumar Dutta is a passionate filmmaker and music enthusiast whose creative vision
+                        breathes life into <strong>Roopkotha Production</strong>. With a deep-rooted love for
+                        storytelling and an ear for compelling musical compositions, Abhishek founded Roopkotha
+                        to create a space where art meets excellence.
+                    </p>
+                    <p class="founder-bio animate-on-scroll">
+                        His unique approach blends <strong>cinematic artistry</strong> with <strong>musical
+                            sensibility</strong>, creating productions that don't just entertain — they move people.
+                        From intimate short films to large-scale music productions, Abhishek brings the same
+                        unwavering commitment to quality and emotional authenticity.
+                    </p>
+                    <blockquote class="founder-quote animate-on-scroll">
+                        <p>"Every story deserves to be told beautifully. At Roopkotha, we don't just produce content —
+                            we craft experiences that stay with you long after the credits roll."</p>
+                        <cite>— Abhishek Kumar Dutta</cite>
+                    </blockquote>
+                    <div class="founder-social animate-on-scroll">
+                        <a href="https://www.instagram.com/cinewithabhi" target="_blank" class="social-link"
+                            aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@abhishekkumardutta-qq7mf?si=Xlvr-1fwqMYAvmWv" target="_blank"
+                            class="social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z" />
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abhishekkumardutta" target="_blank" class="social-link"
+                            aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://facebook.com/cinewithabhi" target="_blank" class="social-link"
+                            aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <span class="section-tag">05 — Let's Collaborate</span>
+                <h2 class="section-title">Start Your Next <br><span class="gradient-text">Production</span></h2>
+                <p class="section-subtitle">Have a story to tell or music to create? Let's bring your vision to life.
+                    Reach out and let's start crafting something extraordinary together.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <path d="M22 6l-10 7L2 6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <a href="mailto:official.roopkotha@gmail.com">official.roopkotha@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <a href="tel:+919431507668">+91 94315 07668</a>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Bhubaneswar, Odisha, India</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@roopkothaproduction?si=Hi9Q43zEdVRSMldz" class="social-link"
+                            aria-label="YouTube">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/roopkotha.production_" class="social-link"
+                            aria-label="Instagram">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <!-- <a href="" class="social-link" aria-label="Facebook">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg> -->
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm">
+                    <input type="hidden" name="access_key" value="d2c95bf6-c69b-464c-bbb6-eaeec1f1ab76">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="" disabled selected>Select a project type</option>
+                            <option value="film">Film Production</option>
+                            <option value="music">Music Production</option>
+                            <option value="music-video">Music Video</option>
+
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Tell Us About Your Vision</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Share the details of your project or idea..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span>Send Inquiry</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo footer-logo">
+                        <img src="logo-rk.png" alt="Roopkotha" class="footer-logo-img">
+                        <span class="logo-text">ROOPKOTHA<span class="logo-dot">.</span></span>
+                    </a>
+                    <p>Crafting cinematic stories and soulful soundscapes.<br>A film & music production house.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <a href="#hero">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#services">Services</a>
+                        <a href="#portfolio">Portfolio</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <a href="#services">Film Production</a>
+                        <a href="#services">Music Production</a>
+                        <a href="#services">Music Videos</a>
+                        <a href="#services">Post Production</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="https://youtube.com/@roopkothaproduction?si=Hi9Q43zEdVRSMldz"
+                            target="_blank">YouTube</a>
+                        <a href="https://www.instagram.com/roopkotha.production_" target="_blank">Instagram</a>
+                        <a href="https://www.facebook.com/cinewithabhi" target="_blank">Facebook</a>
+                        <a href="https://www.linkedin.com/in/abhishekkumardutta" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Roopkotha Production. All rights reserved.</p>
+                <p>Founded by Abhishek Kumar Dutta</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
